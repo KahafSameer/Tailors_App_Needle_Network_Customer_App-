@@ -5,6 +5,7 @@ import 'dart:developer';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:needle_network_main/repository/textGenModel.dart';
+import 'package:needle_network_main/constants/API_key.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:needle_network_main/ModalClasses/TailorsData.dart';
@@ -61,7 +62,7 @@ class GigaChatRepo {
       // Step 2: Make the POST request
       final response = await http.post(
         Uri.parse(
-          'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyCZOrtazGRxU1nuSh6mqTxEgPTW6v0Y9NE',
+          'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=$apikey',
         ),
         body: json.encode(
           {
